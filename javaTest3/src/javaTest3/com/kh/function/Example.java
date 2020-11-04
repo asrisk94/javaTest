@@ -31,7 +31,9 @@ public class Example {
 		average = total/3;
 		
 		String b = (kor>=40 && eng>=40 && math>=40) && (average >= 60)? "합격": "불합격";
+		System.out.println();
 		System.out.println(b);
+		System.out.println();
 
 	}
 	
@@ -39,25 +41,16 @@ public class Example {
 //	    변수 선언하고, 키보드로 입력받은 값들을 변수에 기록하고
 //	    변수값을 화면에 출력 확인함
 //	    성별이 'M'이면 남학생, 'M'이 아니면 여학생으로 출력처리함
-		String gender;
-		char gen;
-		Scanner b = new Scanner(System.in);
 		
-		System.out.print("성별 (M / F) : ");
-		gen = b.next().charAt(0);
-		gender = (gen == 'M')?"남학생":"여학생";
-		System.out.println(gender);
-	}
-	
-	public void opSample3() {
 //		  학생이름 (문자열)
-//		    학년 (정수)
-//		    반 (정수)
-//		    번호 (정수)
-//		    성별(M/F) (문자)    //문자열로 입력받은 후, 문자하나 분리해야 함
-//		    성적 (실수)         //성적은 소수점 2자리까지 출력
-//		 - 출력 예
-//		    3학년 2반 24번 남학생 홍길동은 성적이 95.55이다.
+//	    학년 (정수)
+//	    반 (정수)
+//	    번호 (정수)
+//	    성별(M/F) (문자)    //문자열로 입력받은 후, 문자하나 분리해야 함
+//	    성적 (실수)         //성적은 소수점 2자리까지 출력
+//	 - 출력 예
+//	    3학년 2반 24번 남학생 홍길동은 성적이 95.55이다.
+		
 		
 		String studentName;
 		int year;
@@ -81,8 +74,26 @@ public class Example {
 		System.out.print("성적 > ");
 		grade = a.nextDouble();
 		
-		System.out.printf("%s학년 %d반 %d번 %s학생 %s(은)는 성적이 %.2f이다.", 
+		System.out.println();
+		System.out.printf("%s학년 %d반 %d번 %s학생 %s(은)는 성적이 %.2f이다.%n", 
 				year, clas, num, gender, studentName, grade);
+		System.out.println();
+	}
+	
+	public void opSample3() {
+//		1. 정수 변수 선언
+//		  2. 키보드로 부터 정수 하나 입력받음
+//		  3. 입력받은 정수가 양수이면 "양수다." 출력
+//		     양수가 아니면 "양수가 아니다." 출력
+
+		int num;
+		
+		Scanner a = new Scanner(System.in);
+		System.out.print("정수 입력 > ");
+		num = a.nextInt();
+		String b = num > 0 ? "양수다" : "양수가 아니다.";
+		System.out.println();
+		System.out.println(b);
 	}
 
 }
