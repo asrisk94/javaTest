@@ -16,10 +16,12 @@ public class Test1 {
 		int num = sc.nextInt();
 		
 		for(i=1; i<=num; i++) {
-			sum += i;
+			if(i%2==0) {
+				sum += i;	
+			}
 		}
 		
-		System.out.printf("1부터 입력하신 정수까지의 합은 %d 입니다.", sum);
+		System.out.printf("1부터 입력하신 정수까지의 합은 %d 입니다.%n", sum);
 	}
 
 }
