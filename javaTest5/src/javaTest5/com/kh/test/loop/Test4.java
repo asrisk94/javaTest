@@ -59,5 +59,47 @@ public class Test4 {
 		System.out.printf("\'%c\'(이)가 포함된 갯수 : %d%n", ch, sum);
 
 	}
+	
+	public void test2() {
+		Scanner sc = new Scanner(System.in);
+		int sum=0;
+		
+		System.out.print("문자열 입력 : ");
+		String str = sc.next();
+		
+		int length = str.length();
+		
+		int i = 0;
+		
+		while(i<length) {
+			char search = str.charAt(i);
+			if((search<65) || (search>90 && search <97) || (search>122)) {
+				System.out.println("영문자가 아닌 글자가 속해 있습니다.");
+				return;
+			}
+			i++;
+		}
+
+		System.out.print("검색할 문자 입력 : ");
+		char ch = sc.next().charAt(0);
+		
+		if((ch<65) || (ch>90 && ch <97) || (ch>122)) {
+			System.out.println("영문자가 아닙니다.");
+			return;
+		}
+		
+		i = 0;
+		
+		while(i<length) {
+			char search = str.charAt(i);
+			
+			if(search==ch) {
+				sum +=1;
+			}
+			i++;
+		}
+		
+		System.out.printf("\'%c\'(이)가 포함된 갯수 : %d%n", ch, sum);
+	}
 
 }

@@ -9,11 +9,21 @@ public class Main {
 		Test3 t3 = new Test3();
 		Test4 t4 = new Test4();
 		
-		t1.test();
-		t2.test();
-		t3.test();
-		t4.test();
+		Test5 t5 = new Test5();
+		Test6 t6 = new Test6();
 		
+//		t1.test();
+//		t2.test();
+//		t3.test();
+//		t4.test();
+		
+//		t1.test2();
+//		t2.test2();
+//		t3.test2();
+//		t4.test2();
+		
+//		t5.test();
+		t6.test();
 	}
 
 }

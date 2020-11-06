@@ -34,6 +34,25 @@ public class Test3 {
 		
 	}
 	
-	
+	public void test2() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수를 입력하세요. > ");
+		int num = sc.nextInt();
+		
+		if(num > 9 || num < 1) {
+			System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+			return;
+		}
+		
+		int i = 1;
+		
+		while(i<=9) {
+			System.out.printf("%d * %d = %d%n", num, i, (num*i));
+			i++;
+		}
+
+	}
 
 }
