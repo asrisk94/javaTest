@@ -38,7 +38,6 @@ public class Test6 {
 		Scanner sc = new Scanner(System.in);
 		int choice;							// 선택번호
 		
-		
 		int price1 = 1500;
 		int price2 = 2000;
 		int price3 = 2300;
@@ -87,31 +86,51 @@ public class Test6 {
 			System.out.print("메뉴 선택(1~10 숫자 입력  / 추가주문 원치 않을 시 다른 숫자 입력) : ");
 			choice = sc.nextInt();
 			
-			if(choice == 1)					// 메뉴 입력 및 갯수 카운트
-				first++;
-			if(choice == 2)
-				second++;
-			if(choice == 3)
-				third++;
-			if(choice == 4)
-				forth++;
-			if(choice == 5)
-				fifth++;
-			if(choice == 6)
-				sixth++;
-			if(choice == 7)
-				seventh++;
-			if(choice == 8)
-				eighth++;
-			if(choice == 9)
-				nineth++;
-			if(choice == 10)
-				tenth++;
-			if(!(choice == 1 || choice == 2 ||
-					choice == 3 || choice == 4 ||
-					choice == 5 || choice == 6 ||
-					choice == 7 || choice == 8 ||
-					choice == 9 || choice == 10))
+			if(choice == 1) {						// 수량 입력
+				System.out.print("수량 입력 : ");
+				first += sc.nextInt();
+			}
+			if(choice == 2) {
+				System.out.print("수량 입력 : ");
+				second += sc.nextInt();
+			}
+			if(choice == 3) {
+				System.out.print("수량 입력 : ");
+				third += sc.nextInt();
+			}
+			if(choice == 4) {
+				System.out.print("수량 입력 : ");
+				forth += sc.nextInt();
+			}
+			if(choice == 5) {
+				System.out.print("수량 입력 : ");
+				fifth += sc.nextInt();
+			}
+			if(choice == 6) {
+				System.out.print("수량 입력 : ");
+				sixth += sc.nextInt();
+			}
+			if(choice == 7) {
+				System.out.print("수량 입력 : ");
+				seventh += sc.nextInt();
+			}
+			if(choice == 8) {
+				System.out.print("수량 입력 : ");
+				eighth += sc.nextInt();
+			}
+			if(choice == 9) {
+				System.out.print("수량 입력 : ");
+				nineth += sc.nextInt();
+			}
+			if(choice == 10) {
+				System.out.print("수량 입력 : ");
+				tenth += sc.nextInt();
+			}
+
+			System.out.println("추가주문 하시겠습니까? (y/n) : ");
+			char add = sc.next().charAt(0);					// 메뉴 추가주문 여부
+			
+			if(add != 'y')
 				break;
 		} while(true);
 		

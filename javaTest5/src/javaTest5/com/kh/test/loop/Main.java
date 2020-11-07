@@ -22,7 +22,7 @@ public class Main {
 //		t3.test2();
 //		t4.test2();
 		
-//		t5.test();
+		t5.test();
 		t6.test();
 	}
 
