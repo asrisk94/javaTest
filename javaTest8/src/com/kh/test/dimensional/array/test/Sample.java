@@ -12,20 +12,23 @@ public class Sample {
 //	    2행    값 값 값 2행 값들의 합계
 		
 		int[][] arr = new int[3][4];		// 배열 생성
-		int sum = 0;						// 합계 출력용
+		int sum = 0;						// 행 합계 출력용
 		
 		for(int i=0; i<=2; i++) {			// 임의의 정수값 할당
 			for(int j=0; j<=2; j++) {
 				arr[i][j] = (int)(Math.random()*100+1);
+				sum += arr[i][j];
 			}
+			arr[i][3] = sum;				// 매 4열에 합계 옮김
+			
 		}
 		
+		
 		for(int i=0; i<=2; i++) {			// 출력
-			for(int j=0; j<=2; j++) {
+			for(int j=0; j<=3; j++) {
 				System.out.print(arr[i][j] + " ");	// 같은 행안에 열들 출력
-				sum += arr[i][j];					// 합계 구하기
 			}
-			System.out.println(" 합계 : " + sum);		// 행 끝날 때마다 합계 출력
+			System.out.println();		// 한 행 끝나면 줄바꿈
 		}
 		
 		
