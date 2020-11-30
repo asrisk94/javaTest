@@ -28,12 +28,12 @@ public class BookManager {
 //        4. "books.dat 에 저장 완료!" 출력
 	public void fileSave() {
 		
-		Book[] b = new Book[5];
-		Calendar cal = Calendar.getInstance();
+		Book[] b = new Book[5];					//객체배열 생성
+		Calendar cal = Calendar.getInstance();	// calendar 객체 생성
 		
 		
 		
-		cal.set(1999, 10, 24);
+		cal.set(1999, 10, 24);			// set은 void이므로 생성자 안에 바로 쓸 수 없음
 		b[0] = new Book("가", "김남식", 10000, cal, 0.05);
 		cal.set(2000, 8, 5);
 		b[1] = new Book("나", "박일석", 11000, cal, 0.05);
@@ -44,11 +44,13 @@ public class BookManager {
 		cal.set(2020, 11, 30);
 		b[4] = new Book("바", "최영수", 9000, cal, 0.1);
 		
-		String fileName = "file/books.dat";
+		
+		
+		String fileName = "file/books.dat";		// 파일경로
 		
 		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName));) {
 			
-			oos.writeObject(b.toString());
+			oos.writeObject(b);		// 오브젝트 쓰기 
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -76,13 +78,13 @@ public class BookManager {
 		
 		
 		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName));) {
-
+												// try 괄호 안에는 생성과 선언 전부 있어야함.
 			b = (Book[])ois.readObject();
 			
 			for(int i=0; i<b.length; i++) {
 				
-				if(b[i] == null) break;
-				System.out.println(b[i]);
+				if(b[i] == null) break;					// 자료 없으면 중지
+				System.out.println(b[i].toString());	// 오버라이딩 투스트링 활용
 			}
 			
 		} catch(FileNotFoundException | ClassNotFoundException e) {

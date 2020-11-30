@@ -10,7 +10,7 @@ public class TestBookManager {
 		
 		BookManager bm = new BookManager();
 		
-//		bm.fileSave();
+		bm.fileSave();
 		bm.fileRead();
 
 	}
