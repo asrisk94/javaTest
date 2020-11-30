@@ -29,20 +29,24 @@ public class BookManager {
 	public void fileSave() {
 		
 		Book[] b = new Book[5];					//객체배열 생성
-		Calendar cal = Calendar.getInstance();	// calendar 객체 생성
+		Calendar cal1 = Calendar.getInstance();	// calendar 객체 생성
+		Calendar cal2 = Calendar.getInstance();	// calendar 객체 생성
+		Calendar cal3 = Calendar.getInstance();	// calendar 객체 생성
+		Calendar cal4 = Calendar.getInstance();	// calendar 객체 생성
+		Calendar cal5 = Calendar.getInstance();	// calendar 객체 생성
 		
 		
 		
-		cal.set(1999, 10, 24);			// set은 void이므로 생성자 안에 바로 쓸 수 없음
-		b[0] = new Book("가", "김남식", 10000, cal, 0.05);
-		cal.set(2000, 8, 5);
-		b[1] = new Book("나", "박일석", 11000, cal, 0.05);
-		cal.set(1998, 7, 13);
-		b[2] = new Book("다", "백남준", 8000, cal, 0.1);
-		cal.set(2008, 12, 24);
-		b[3] = new Book("라", "주제 사라마구", 12000, cal, 0.02);
-		cal.set(2020, 11, 30);
-		b[4] = new Book("바", "최영수", 9000, cal, 0.1);
+		cal1.set(1999, 10, 24);			// set은 void이므로 생성자 안에 바로 쓸 수 없음
+		b[0] = new Book("가", "김남식", 10000, cal1, 0.05);
+		cal2.set(2000, 8, 5);
+		b[1] = new Book("나", "박일석", 11000, cal2, 0.05);
+		cal3.set(1998, 7, 13);
+		b[2] = new Book("다", "백남준", 8000, cal3, 0.1);
+		cal4.set(2008, 12, 24);
+		b[3] = new Book("라", "주제 사라마구", 12000, cal4, 0.02);
+		cal5.set(2020, 11, 30);
+		b[4] = new Book("바", "최영수", 9000, cal5, 0.1);
 		
 		
 		

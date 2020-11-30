@@ -66,13 +66,14 @@ public class Book implements Serializable {
 	@Override
 	public String toString() {
 		
-		
+		int year = this.dates.get(Calendar.YEAR);
+		int month = this.dates.get(Calendar.MONTH);
+		if(month == 0) month = 12;					// 12월은 0으로 뜨기 때문에 변환처리
+		int date = this.dates.get(Calendar.DATE);
 		
 		return this.title + ", " + this.author + ", " + this.price + "원, " + 
-		this.dates.get(Calendar.YEAR) + "년 " + this.dates.get(Calendar.MONTH) + "월 " + this.dates.get(Calendar.DATE) + "일 출간" + ", " + 
-				((Math.round(this.discountRate*100))/100.0);
+		year + "년 " + month + "월 " + date + "일 출간" + ", " + 
+				this.discountRate;
 	}
-
-
 
 }
