@@ -1,12 +1,15 @@
 package com.collection.list.music.view;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
 import com.collection.list.music.controller.MusicManager;
 import com.collection.list.music.model.vo.Music;
+import com.collection.list.music.model.vo.MusicSingerAscending;
+import com.collection.list.music.model.vo.MusicSingerDescending;
+import com.collection.list.music.model.vo.MusicTitleAscending;
+import com.collection.list.music.model.vo.MusicTitleDescending;
 
 
 
@@ -38,9 +41,12 @@ public class MusicMenu {
 			int choice = Integer.parseInt(input);
 			
 			switch(choice) {
-			case 1 : printList(mm.selectList()); break;
-			case 2 : mm.addList(inputMusic()); break;
-			case 3 : mm.addAtZero(inputMusic()); break;
+			case 1 : 
+				printList(mm.selectList()); break;
+			case 2 : 
+				mm.addList(inputMusic()); break;
+			case 3 : 
+				mm.addAtZero(inputMusic()); break;
 			case 4 : 
 				if(!(mm.removeMusic(inputTitle()))) {
 					System.out.println("해당 곡이 없습니다.");
@@ -60,9 +66,9 @@ public class MusicMenu {
 				System.out.println(mm.searchMusicBySinger(inputSinger())); 
 				break;
 			case 8 : 
-				Collections.sort(mm.selectList());
-				break;
-			case 0 : System.out.println("프로그램을 종료합니다."); return;
+				MusicSort(); break;
+			case 0 : 
+				System.out.println("프로그램을 종료합니다."); return;
 			default :
 				System.out.println("잘못된 입력입니다."); break;
 			}
@@ -70,6 +76,39 @@ public class MusicMenu {
 		}	// while 괄호
 		
 	}	// mainMenu 괄호
+	
+	
+	// 정렬 기준
+	public void MusicSort() {
+		System.out.println("    ================== 정렬 메뉴 ===================\r\n" + 
+				"    1. 가수명 오름차순\r\n" + 
+				"    2. 가수명 내림차순\r\n" + 
+				"    3. 곡명 오름차순\r\n" + 
+				"    4. 곡명 내림차순\r\n" + 
+				"    5. 메인메뉴 돌아가기\r\n" + 
+				"    ================================================");
+		System.out.println("원하는 옵션을 선택해주세요 : ");
+		String str = sc.nextLine();
+		int num = Integer.parseInt(str);
+		
+		switch(num) {
+		case 1 : 
+			Comparator<Music> c1 = new MusicSingerAscending(); 
+			mm.orderBy(c1); break;
+		case 2 : 
+			Comparator<Music> c2 = new MusicSingerDescending();
+			mm.orderBy(c2); break;
+		case 3 : 
+			Comparator<Music> c3 = new MusicTitleAscending(); 
+			mm.orderBy(c3); break;
+		case 4 : 
+			Comparator<Music> c4 = new MusicTitleDescending(); 
+			mm.orderBy(c4); break;
+		case 5 :
+			System.out.println("메인 메뉴로 돌아갑니다."); return;
+		}
+
+	}
 	
 	
 	
