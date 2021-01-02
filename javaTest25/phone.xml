@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="G5">Phone [model=G5, price=563500, manufacture=LG, quantity=5]</entry>
+<entry key="galaxy S7">Phone [model=galaxy S7, price=563500, manufacture=삼성, quantity=7]</entry>
+<entry key="iphone 6s">Phone [model=iphone 6s, price=840000, manufacture=애플, quantity=3]</entry>
+</properties>
